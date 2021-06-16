@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
       <Header airline={airline} setAirline={setAirline} />
-      <Hero />
+      <Hero airline={airline} />
       <Form />
     </div>
   );
