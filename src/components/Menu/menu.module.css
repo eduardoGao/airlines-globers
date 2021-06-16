@@ -1,0 +1,43 @@
+.menu {
+  height: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.bar {
+  width: 33px;
+  height: 5px;
+  border-radius: 4px;
+  background: black;
+  transform-origin: 30.8px;
+  transition: transform .4s cubic-bezier(.23,-0.62,.75,1.56), opacity .2s ease-in-out;
+}
+.menu_open .bar:nth-child(1) {
+  transform: rotate(-45deg);
+}
+.menu_open .bar:nth-child(2) {
+  opacity: 0;
+}
+.menu_open .bar:nth-child(3) {
+  transform: rotate(45deg);
+}
+
+
+.drop {
+  position: absolute;
+  top: -60vh;
+  /* top: 0; */
+  /* bottom: 0; */
+  right: 0;
+  padding: 1em;
+  width: 60vw;
+  height: 50vh;
+  background: forestgreen;
+  border-radius: 8px;
+
+  transition: transform .4s ease-in-out;
+}
+.dropdown {
+  transform: translateY(127%);
+}

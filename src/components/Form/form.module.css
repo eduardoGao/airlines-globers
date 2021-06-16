@@ -1,0 +1,40 @@
+.section {
+  display: grid;
+  grid-template-columns: 395px;
+  margin: 2em auto;
+  max-width: 365px;
+}
+
+.form {
+  /* background: chocolate; */
+  display: flex;
+  flex-direction: column;
+  min-width: 250px;
+}
+
+.label {
+  margin-bottom: 2em;
+}
+
+.span {
+  display: block;
+}
+
+.input {
+  width: 90%;
+  border: none;
+  padding: .3em;
+  /* border-radius: 6px; */
+  border-bottom: 1px solid black;
+}
+
+.button {
+  width: 100px;
+  padding: .7em;
+  border: none;
+  background: black;
+  color: white;
+  border-radius: 8px;
+  font-weight: bold;
+  /* margin: 0 auto; */
+}

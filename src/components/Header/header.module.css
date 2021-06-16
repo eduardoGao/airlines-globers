@@ -1,0 +1,23 @@
+.header {
+  padding: 1em 2em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.logoContainer {
+  width: 35px;
+  display: flex;
+  align-items: center;
+}
+
+.image{
+  transform: rotate(45deg);
+  margin-right: .5em;
+}
+
+.name {
+  font-weight: bold;
+
+}

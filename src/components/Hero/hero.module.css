@@ -1,0 +1,22 @@
+.container {
+  /* background: red; */
+  display: grid;
+  grid-template-columns: 395px;
+  margin: 0 auto;
+  max-width: 365px;
+}
+
+@media screen and (min-width: 767px) {
+  .container {
+    /* background: red; */
+    grid-template-columns: 600px;
+    max-width: 600px;
+  }
+}
+
+@media screen and (min-width: 899px) {
+  .container {
+    grid-template-columns: 750px;
+    max-width: 750px;
+  }
+}
