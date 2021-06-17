@@ -53,7 +53,7 @@ function FormContainer() {
     }
 
     // Validate mobile field
-    if(!/^[0-9\-\+]{9,15}$/.test(userData.mobile)) {
+    if(!/^[0-9\-+]{9,15}$/.test(userData.mobile)) {
       valid = false
       errors['mobile'] = 'Ingresa un número válido'
     }
