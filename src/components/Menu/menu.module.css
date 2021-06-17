@@ -27,13 +27,10 @@
 .drop {
   border-left: 8px solid var(--color-main);
   position: absolute;
-  top: -55vh;
-  /* top: 0; */
-  /* bottom: 0; */
+  top: -470px;
   right: 0;
-  padding: 1em;
+  padding: 0;
   width: 50vw;
-  /* height: 50vh; */
   background: black;
   color: white;
   border-radius: 8px;
@@ -41,7 +38,8 @@
   transition: transform .4s ease-in-out;
 }
 .dropdown {
-  transform: translateY(127%);
+  /* transform: translateY(130%); */
+  transform: translateY(550px);
 }
 
 .list {
@@ -76,6 +74,7 @@
     padding: 0 .3em;
   }
   .dropdown {
-    transform: translateY(455%);
-}
+    /* transform: translateY(720%); */
+    transform: translateY(530px);
+  }
 }
