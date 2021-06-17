@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Header, Hero, FormContainer } from './components'
+import { Header, Hero, FormContainer, Sign } from './components'
 
 function App() {
   const [airline, setAirline] = useState()
@@ -9,6 +9,7 @@ function App() {
       <Header airline={airline} setAirline={setAirline} />
       <Hero airline={airline} />
       <FormContainer />
+      <Sign />
     </div>
   );
 }

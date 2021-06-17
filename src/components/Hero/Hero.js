@@ -10,7 +10,8 @@ function Hero({ airline }) {
         ¡Hola, bienvenido! Sabemos que quieres viajar en un {' '}
         {airline ? <span className={styles.airName}>{airline}</span> : <img src={icon} alt="airplane" className={styles.icon} />}
       </h1>
-      <h4>Por favor, completa el siguiente formulario:</h4>
+      <h4 className={styles.instruction}>Por favor, completa el siguiente formulario:</h4>
+      <span className={styles.warning}>Todos los campos son obligatorios*</span>
     </div>
   )
 }

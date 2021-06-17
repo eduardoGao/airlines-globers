@@ -1,0 +1,15 @@
+.sign {
+  background: black;
+  color: white;
+  font-size: .85em;
+  padding: .8em 1em;
+  font-weight: bold;
+  border-radius: 16px;
+  position: absolute;
+  bottom: 13px;
+  right: 15px;
+}
+
+.name {
+  color: var(--color-main);
+}

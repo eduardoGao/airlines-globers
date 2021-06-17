@@ -17,6 +17,17 @@
   font-weight: 800;
 }
 
+.instruction {
+  margin-bottom: 0;
+  color: var(--color-main)  ;
+}
+
+.warning {
+  font-size: .8em;
+  color: #4c4c4c;
+  margin-top: .3em;
+}
+
 @media screen and (min-width: 767px) {
   .container {
     /* background: red; */
