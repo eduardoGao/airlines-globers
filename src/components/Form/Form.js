@@ -1,74 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styles from './form.module.css'
 
-function Form() {
-  const initialState = {
-    name: '',
-    email: '',
-    mobile: '',
-    age: ''
-  }
-  const [userData, setUserData] = useState(initialState)
-
-  const [send, setSend] = useState({
-    loading: false,
-    feedbackMessage: false
-  })
-
-  const handleInput = (e) => {
-    setUserData({
-      ...userData,
-      [e.target.name]: e.target.value
-    })
-  }
-
-  //Funciana:
-  // const valid = userData.name === '' ? false : true
-
-  // Método
-  function validarForm() {
-    let valid = false
-    let field = userData
-
-    if(field['name'] === '') {
-      valid = true
-    }
-    if(userData.name.length < 3) {
-      valid = true
-    }
-
-    return valid
-  }
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    console.log('Enviando...')
-
-    if(validarForm()) {
-      console.log('INCOMPLET')
-    } else {
-      setSend({ loading: true })
-
-      const timer = setTimeout(() => {
-        console.log(userData)
-        e.target.reset()
-        console.log('Enviado')
-        setUserData(initialState)
-        setSend({ loading: false })
-
-        setSend({ feedbackMessage: true })
-        const feedbackTimer = setTimeout(() => {
-          setSend({ feedbackMessage: false })
-        }, 5000)
-        return () => clearTimeout(feedbackTimer)
-
-      }, 1000)
-      return () => clearTimeout(timer)
-
-    }
-
-  }
-
+// UI Component \ Receiving props to father FormContainer component
+function Form({ handleInput, handleSubmit, send }) {
   return (
     <section className={styles.section}>
       <form className={styles.form} onSubmit={handleSubmit}>
@@ -81,19 +15,21 @@ function Form() {
           className={styles.input}
           onChange={handleInput}
         />
+        <span className={styles.messageValidation}>{ send.error?.name }</span>
       </label>
       <label htmlFor="email" className={styles.label}>
         <span className={styles.span}>Correo electrónico</span>
         <input
-          type="email"
+          // type="email"
           id='email'
           name='email'
           className={styles.input}
           onChange={handleInput}
         />
+        <span className={styles.messageValidation}>{ send.error?.email }</span>
       </label>
       <label htmlFor="mobile" className={styles.label}>
-        <span className={styles.span}>Teléfóno móvil</span>
+        <span className={styles.span}>Teléfono móvil</span>
         <input
           type="tel"
           id='mobile'
@@ -101,6 +37,7 @@ function Form() {
           className={styles.input}
           onChange={handleInput}
         />
+        <span className={styles.messageValidation}>{ send.error?.mobile }</span>
       </label>
       <label htmlFor="age" className={styles.label}>
         <span className={styles.span}>Edad</span>
@@ -108,11 +45,10 @@ function Form() {
           type="number"
           id='age'
           name='age'
-          min='18'
-          max='99'
           className={styles.input}
           onChange={handleInput}
         />
+        <span className={styles.messageValidation}>{send.error?.age}</span>
       </label>
       <div className={styles.buttonContainer}>
         <button type="submit" className={styles.button}>Enviar</button>
@@ -123,7 +59,7 @@ function Form() {
       send.feedbackMessage &&
       <div className={styles.feedbackContainer}>
         <div className={styles.feedbackItem}>
-          <div className={styles.icon}>🔥</div>
+          <div className={styles.icon}>⭐️</div>
           <h6 className={styles.message}>Tu información fue enviada con éxito. Muy pronto estaremos en contacto contigo. ✈️</h6>
           <div className={styles.loading}></div>
         </div>
