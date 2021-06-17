@@ -10,6 +10,11 @@ function Form() {
   }
   const [userData, setUserData] = useState(initialState)
 
+  const [send, setSend] = useState({
+    loading: false,
+    feedbackMessage: false
+  })
+
   const handleInput = (e) => {
     setUserData({
       ...userData,
@@ -17,10 +22,51 @@ function Form() {
     })
   }
 
+  //Funciana:
+  // const valid = userData.name === '' ? false : true
+
+  // Método
+  function validarForm() {
+    let valid = false
+    let field = userData
+
+    if(field['name'] === '') {
+      valid = true
+    }
+    if(userData.name.length < 3) {
+      valid = true
+    }
+
+    return valid
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log(userData)
-    e.target.reset()
+    console.log('Enviando...')
+
+    if(validarForm()) {
+      console.log('INCOMPLET')
+    } else {
+      setSend({ loading: true })
+
+      const timer = setTimeout(() => {
+        console.log(userData)
+        e.target.reset()
+        console.log('Enviado')
+        setUserData(initialState)
+        setSend({ loading: false })
+
+        setSend({ feedbackMessage: true })
+        const feedbackTimer = setTimeout(() => {
+          setSend({ feedbackMessage: false })
+        }, 5000)
+        return () => clearTimeout(feedbackTimer)
+
+      }, 1000)
+      return () => clearTimeout(timer)
+
+    }
+
   }
 
   return (
@@ -68,8 +114,21 @@ function Form() {
           onChange={handleInput}
         />
       </label>
-      <button type="submit" className={styles.button}>Enviar</button>
+      <div className={styles.buttonContainer}>
+        <button type="submit" className={styles.button}>Enviar</button>
+        {send.loading && <span className={styles.spinner}></span>}
+      </div>
     </form>
+    {
+      send.feedbackMessage &&
+      <div className={styles.feedbackContainer}>
+        <div className={styles.feedbackItem}>
+          <div className={styles.icon}>🔥</div>
+          <h6 className={styles.message}>Tu información fue enviada con éxito. Muy pronto estaremos en contacto contigo. ✈️</h6>
+          <div className={styles.loading}></div>
+        </div>
+      </div>
+    }
     </section>
   )
 }
