@@ -25,7 +25,10 @@
   border: none;
   padding: .3em;
   /* border-radius: 6px; */
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #c8c8c8;
+}
+.input:focus-visible {
+  outline: 1.5px solid var(--color-main);
 }
 
 .buttonContainer {
@@ -34,15 +37,18 @@
 }
 
 .button {
+  background: var(--color-main);
   width: 100px;
   padding: .7em;
   border: none;
-  background: black;
   color: white;
   border-radius: 8px;
   font-weight: bold;
   margin-right: 1em;
   /* margin: 0 auto; */
+}
+.button:focus-visible {
+  outline: 1.5px solid var(--color-main);
 }
 
 .spinner {
@@ -66,7 +72,6 @@
 
 .feedbackContainer {
   background: rgba(255, 255, 255, .5);
-  color: orange;
   font-weight: bold;
   position: absolute;
   top: 0;
@@ -98,19 +103,21 @@
   font-size: 1em;
   line-height: 1.4em;
   margin: 1em 1.7em 1.5em;
+  color: white;
 }
 .icon {
   margin: 1em 1.7em;
   width: 35px;
   height: 35px;
   border-radius: 50%;
-  background: white;
+  /* background: white; */
+  border: 1px solid var(--color-main);
   display: grid;
   place-items: center;
 }
 
 .loading {
-  background: orange;
+  background: var(--color-main);
   height: 8px;
   /* border-bottom-left-radius: 16px;
   border-bottom-right-radius: 16px; */
@@ -126,4 +133,11 @@
   to {
     width: calc(100% - 1.7em);
   }
+}
+
+
+.messageValidation {
+  color: red;
+  display: block;
+  font-size: .7em;
 }

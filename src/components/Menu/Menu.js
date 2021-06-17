@@ -3,12 +3,14 @@ import styles from './menu.module.css'
 import airlines from '../../data/airlines.json'
 
 function Menu({ setAirline }) {
+  // State and method to handle the menu view
   const [menu, setMenu] = useState(false)
 
   const toggleMenu = () => {
     setMenu(!menu)
   }
 
+  // Function to change the state that shows the name in the main view
   const handleAirline = (name) => {
     setAirline(name)
     toggleMenu()

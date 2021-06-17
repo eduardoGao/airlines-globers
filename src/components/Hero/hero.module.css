@@ -6,6 +6,17 @@
   max-width: 365px;
 }
 
+.icon {
+  width: 40px;
+  margin-left: .2em;
+  /* padding-top: .5em; */
+}
+
+.airName {
+  color: var(--color-main);
+  font-weight: 800;
+}
+
 @media screen and (min-width: 767px) {
   .container {
     /* background: red; */

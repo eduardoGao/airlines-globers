@@ -25,6 +25,7 @@
 
 
 .drop {
+  border-left: 8px solid var(--color-main);
   position: absolute;
   top: -55vh;
   /* top: 0; */
@@ -57,7 +58,7 @@
 }
 .item:hover {
   text-decoration: underline;
-  color: aquamarine;
+  color: var(--color-main);
 }
 
 
