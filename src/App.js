@@ -1,6 +1,5 @@
 import { useState } from 'react'
-import { Header, Hero, Form } from './components'
-// import './App.css';
+import { Header, Hero, FormContainer } from './components'
 
 function App() {
   const [airline, setAirline] = useState()
@@ -8,8 +7,8 @@ function App() {
   return (
     <div className="App">
       <Header airline={airline} setAirline={setAirline} />
-      <Hero />
-      <Form />
+      <Hero airline={airline} />
+      <FormContainer />
     </div>
   );
 }

@@ -25,19 +25,57 @@
 
 
 .drop {
+  border-left: 8px solid var(--color-main);
   position: absolute;
-  top: -60vh;
+  top: -55vh;
   /* top: 0; */
   /* bottom: 0; */
   right: 0;
   padding: 1em;
-  width: 60vw;
-  height: 50vh;
-  background: forestgreen;
+  width: 50vw;
+  /* height: 50vh; */
+  background: black;
+  color: white;
   border-radius: 8px;
 
   transition: transform .4s ease-in-out;
 }
 .dropdown {
   transform: translateY(127%);
+}
+
+.list {
+  padding-left: 1.5em;
+}
+
+.item {
+  list-style: none;
+  font-weight: bold;
+  font-size: 1.5em;
+  padding: .75em 0;
+  cursor: pointer;
+  transition: .4s;
+}
+.item:hover {
+  text-decoration: underline;
+  color: var(--color-main);
+}
+
+
+/* Responsive */
+
+@media screen and (min-width: 899px) {
+  .list {
+    display: flex;
+    justify-content: space-between;
+  }
+  .item {
+    font-size: 1em;
+  }
+  .list {
+    padding: 0 .3em;
+  }
+  .dropdown {
+    transform: translateY(455%);
+}
 }
